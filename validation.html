@@ -1,0 +1,167 @@
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+      <style>
+         body {
+         background-color: #F4F6F6;
+         }
+         .form-control {
+         border-radius: 0;
+         height: 60px;
+         font-size: 30px;
+         position: relative;
+         }
+         input[type="text"] {
+         padding-bottom: 10px;
+         border: 1px solid black;
+         padding-bottom: 65px;
+         padding-top: 25px;
+         color: #000;
+         }
+         span {
+         font-size: 25px;
+         }
+         .form-control placeholder {
+         color: #000;
+         }
+         .margin {
+         margin-bottom: 800px;
+         margin-top: 400px;
+         }
+         .btn {
+         background-color: #F1948A;
+         color: #fff;
+         height: 68px;
+         box-shadow: 0px 4px 10px #888888;
+         font-size: 30px;
+         position: fixed;
+         top: 115rem;
+         left: 128px;
+         }
+         input[type="submit"].btn-block.btn-block {
+         width: 72rem;
+         }
+         p {
+         font-size: 30px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Nesciunt repudiandae soluta illo eaque odio aliquid! Ullam cupiditate 
+            quidem nam tempore autem consequatur, sit quae dignissimos voluptas 
+            sapiente quos totam molestias!
+         </p>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Nesciunt repudiandae soluta illo eaque odio aliquid! Ullam cupiditate 
+            quidem nam tempore autem consequatur, sit quae dignissimos voluptas 
+            sapiente quos totam molestias!
+         </p>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Nesciunt repudiandae soluta illo eaque odio aliquid! Ullam cupiditate 
+            quidem nam tempore autem consequatur, sit quae dignissimos voluptas 
+            sapiente quos totam molestias!
+         </p>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Nesciunt repudiandae soluta illo eaque odio aliquid! Ullam cupiditate 
+            quidem nam tempore autem consequatur, sit quae dignissimos voluptas 
+            sapiente quos totam molestias!
+         </p>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Nesciunt repudiandae soluta illo eaque odio aliquid! Ullam cupiditate 
+            quidem nam tempore autem consequatur, sit quae dignissimos voluptas 
+            sapiente quos totam molestias!
+         </p>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Nesciunt repudiandae soluta illo eaque odio aliquid! Ullam cupiditate 
+            quidem nam tempore autem consequatur, sit quae dignissimos voluptas 
+            sapiente quos totam molestias!
+         </p>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Nesciunt repudiandae soluta illo eaque odio aliquid! Ullam cupiditate 
+            quidem nam tempore autem consequatur, sit quae dignissimos voluptas 
+            sapiente quos totam molestias!
+         </p>
+         <h1 ><b>Enter the following information to continue</b></h1>
+         <div class="form-group" onsubmit="func()">
+            <input type="text"  class="form-control" placeholder="Email*" id="email" name="mail" onkeyup="myFunction()">
+            <span id="emailerror"></span>
+         </div>
+         <div class="form-group">
+            <input type="text" id="number" class="form-control" placeholder="Telephone Contact* "name="number" maxlength="10" onkeyup="myFunction()">
+            <span id="numbererror"></span>
+            <p class="margin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+               exercitationem ullam quisquam nulla nisi est, illo earum labore ducimus 
+               autem excepturi debitis quasi. Doloribus doloremque quis quia eos deleniti commodi.
+            </p>
+         </div>
+         <input type="submit" class="btn btn-block" id="submit" onclick="func()"> 
+      </div>
+      <!--row and container end-->
+      <script type="text/javascript">  
+         function func(){
+         
+         
+         
+            
+         
+         var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-z]{2,6}$/;  
+         var email = document.getElementById("email").value.trim();
+         if((email=="") || (!pattern.test(email))){
+         document.getElementById("emailerror").innerHTML = "Please enter a valid email address";
+         document.getElementById("emailerror").style.color = "red";
+         
+         }else{
+         
+         
+         document.getElementById("emailerror").innerHTML = "";
+         document.getElementById("emailerror").style.color = "";
+         
+         }	
+            
+            var number = document.getElementById("number").value.trim();
+         if((number =="") || (isNaN(number)) || (number.length !=10))
+         {
+         document.getElementById("numbererror").innerHTML = "Provide valid phone number";
+         document.getElementById("numbererror").style.color = "red";
+         
+         }else{
+         
+         
+         document.getElementById("numbererror").innerHTML = "";
+         document.getElementById("numbererror").style.color = "";
+         
+         }
+         
+         if((email=="") || (!pattern.test(email)) && (number =="") || (isNaN(number)) || (number.length !=10)){
+            alert("please enter the information below to proceed");
+         }else{
+            document.getElementById("numbererror").innerHTML = "";
+         document.getElementById("numbererror").style.color = "";
+                
+         
+                document.getElementById("emailerror").innerHTML = "";
+         document.getElementById("emailerror").style.color = "";
+               
+         }
+         
+         
+         
+         }
+         
+         function myFunction() {
+            var number = document.getElementById("number").value.trim();
+            var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-z]{2,6}$/; 
+            
+         var email = document.getElementById("email").value.trim();
+            if(((email!="") && (pattern.test(email))) && ((number !="") && (!(/\D/.test(number))) && (number.length ==10))){       
+             document.getElementById("submit").style.backgroundColor = "#ff4713";}
+             else{
+                document.getElementById("submit").style.backgroundColor = "";  
+             }
+          }
+         
+      </script>
+   </body>
+</html>
